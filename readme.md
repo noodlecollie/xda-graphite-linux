@@ -33,7 +33,6 @@ Once Linux is running, I should be able to write applications using graphics lib
 [DirectFB](https://directfb2.github.io/) or [LVGL](https://lvgl.io/), which can write directly to the device's
 frame buffer.
 
-
 ## Tech Stack
 
 The technologies used here are:
