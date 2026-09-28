@@ -1,0 +1,15 @@
+# The kernel file we are booting should be named "zImage",
+# and should be located next to HaRET.exe.
+set KERNEL "zImage"
+
+# TODO: Why is this ID chosen?
+set MTYPE 1270
+
+# root=/dev/ram0 is used to boot the initramfs
+#   that will be resident in RAM.
+# console=tty1 maps the console to the default terminal.
+# earlyprintk=fb makes the kernel logs print directly
+#   to the framebuffer (we can't get UART output over
+#   the mini-USB port because it doesn't have the
+#   correct pinout for it).
+set CMDLINE "root=/dev/ram0 rootwait console=tty1 earlyprintk=fb"
