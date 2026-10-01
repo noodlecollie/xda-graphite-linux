@@ -1,23 +1,6 @@
 ## Buildroot
 
-The overall configuration for the Linux image that will run on the device is stored in `config/buildroot_config`.
-Buildroot uses this to decide what to build, and how to do it.
-
-If you've run `bootstrap.sh`, this file will be symlinked to `buildroot/.config` so that buildroot can see it. To edit
-the configuration, there are two helper utilities you can run from within the `buildroot` directory:
-
-```bash
-# Configure the overall image. This includes things like what architecture you want to
-# compile for, what toolchain you want to use, which version of the Linux kernel you
-# want, how you want to package the image to be launched on your device, and so on.
-make menuconfig
-
-# Configure the options specific to the Linux kernel you are building.
-# Note that for this to run correctly, you will need to have selected a Linux kernel
-# version from menuconfig above, by going into the "Kernel" submenu and pressing
-# Y to enable the Linux kernel feature.
-make linux-menuconfig
-```
+TODO: How to modify the configs using the ext tree?
 
 ### Crucial Configuration
 

@@ -11,19 +11,8 @@ To build a Distrobox image and set everything up, run:
 distrobox assemble create .distrobox/buildroot_dev.ini && distrobox enter buildroot_dev
 ```
 
-Once inside the container, run `bootstrap.sh` once to set up the bits and pieces required for buildroot.
-
 ## Building the Linux Image
 
-To build the Linux image using buildroot, run:
+For a deep explanation of how the Linux image is configured, see [configuration.md](configuration.md).
 
-```bash
-cd buildroot
-make
-```
-
-The process will eventually produce an `output/images/zImage` file, which is the entire Linux system image. The first
-run will take a long time (it has to build the entire Linux kernel), but subsequent runs will make use of previous
-build artifacts.
-
-For a deeper explanation of how this image is configured, see [configuration.md](configuration.md).
+TODO: Build instructions

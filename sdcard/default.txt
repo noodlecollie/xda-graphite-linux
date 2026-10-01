@@ -1,19 +1,18 @@
+# Make sure we log to see what's going on.
+log haret.txt
+
 # The kernel file we are booting should be named "zImage",
 # and should be located next to HaRET.exe.
-set KERNEL "zImage"
+set KERNEL zImage
 
-# This is the "Samsung S3C6400 Evaluation Platform" (smdk6400)
-# https://www.arm.linux.org.uk/developer/machines/list.php?mid=1270
-# https://www.manualslib.com/manual/1317604/Samsung-S3c6400x.html?page=4#manual
-# It looks pretty close to what we need, but may need to be
-# re-evaluated with time.
-set MTYPE 1270
+# This is "Generic Intel PXA27x" (pxa27x)
+# https://www.arm.linux.org.uk/developer/machines/list.php?mid=660
+# It expired in 2005.
+set MTYPE 660
 
-# root=/dev/ram0 is used to boot the initramfs
-#   that will be resident in RAM.
-# console=tty1 maps the console to the default terminal.
-# earlyprintk=fb makes the kernel logs print directly
-#   to the framebuffer (we can't get UART output over
-#   the mini-USB port because it doesn't have the
-#   correct pinout for it).
-set CMDLINE "root=/dev/ram0 rootwait console=tty1 earlyprintk=fb"
+# Enables logging on device's framebuffer after HaRET takes over
+# CPU control, and stops logging to file.
+set FBDURINGBOOT 1
+
+set cmdline "console=tty0 panic=20 root=/dev/mmcblk0p2 init=/usr/bin/init"
+boot
